@@ -1,0 +1,148 @@
+{% if site.github.public_repositories == null %}
+<h3>My Popular Repositories</h3>
+{% assign repos = site.github.public_repositories | sort: "stargazers_count" | reverse%}
+{% for repo in repos | limit: site.side_bar_repo_limit %}
+<a href="{{ repo.html_url }}" target="_blank" class="card text-center">
+    <div class="thumbnail">
+        <div class="card-image geopattern" data-pattern-id="{{ repo.name }}">
+            <div class="card-image-cell">
+                <h3 class="card-title">
+                    {{ repo.name }}
+                </h3>
+            </div>
+        </div>
+        <div class="caption">
+            <div class="card-description">
+                <p class="card-text">{{ repo.description }}</p>
+            </div>
+            <div class="card-text">
+                <span class="meta-info" title="{{ repo.stargazers_count }} stars">
+                    <span class="octicon octicon-star"></span> {{ repo.stargazers_count }}
+                </span>
+                <span class="meta-info" title="{{ repo.forks_count }} forks">
+                    <span class="octicon octicon-git-branch"></span> {{ repo.forks_count }}
+                </span>
+                <span class="meta-info" title="Last updated：{{ repo.updated_at }}">
+                    <span class="octicon octicon-clock"></span>
+                    <time datetime="{{ repo.updated_at }}">{{ repo.updated_at | date: '%Y-%m-%d' }}</time>
+                </span>
+            </div>
+        </div>
+    </div>
+</a>
+{% endfor %}
+{% else %}
+
+<a href="#" class="card text-center">
+    <div class="thumbnail">
+        <div class="card-image geopattern" data-pattern-id="Tags">
+            <div class="card-image-cell">
+                <h3 class="card-title">
+                    Tags
+                </h3>
+            </div>
+        </div>
+        <div class="caption">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    
+                    <button class="btn btn-default" type="button">Java</button>
+                    
+                    <button class="btn btn-default" type="button">C++</button>
+                    
+                    <button class="btn btn-default" type="button">大数据</button>
+
+                    <button class="btn btn-default" type="button">C</button>
+                    
+                    <button class="btn btn-default" type="button">Python</button>
+
+                    <button class="btn btn-default" type="button">多进程</button>
+                    
+                    <button class="btn btn-default" type="button">MySQL</button>
+                    
+                    <button class="btn btn-default" type="button">Elasticsearch</button>
+                    
+                    <button class="btn btn-default" type="button">Redis</button>
+
+                    <button class="btn btn-default" type="button">多线程</button>
+                    
+                    <button class="btn btn-default" type="button">NOSQL</button>
+
+                    <button class="btn btn-default" type="button">Kafka</button>
+
+                    <button class="btn btn-default" type="button">UML</button>
+
+                    <button class="btn btn-default" type="button">Spark</button>
+
+                    <button class="btn btn-default" type="button">并发编程</button>
+                    
+                    <button class="btn btn-default" type="button">Design Patterns</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a href="#" target="_blank" onclick="window.open(&quot;https://www.google.com/gmail&quot;);" class="card text-center">
+    <div class="thumbnail">
+        <div class="card-image geopattern" data-pattern-id="邮箱">
+            <div class="card-image-cell">
+                <h3 class="card-title">
+                    邮箱
+                </h3>
+            </div>
+        </div>
+        <div class="caption">
+            <label for="">jiaotriangle@gmail.com</label>
+        </div>
+    </div>
+</a>
+
+<center><h3>My Recent Project</h3></center>
+
+<a href="#" target="_blank" onclick="window.open(&quot;https://github.com/ITriangle/ElasticsearchTools&quot;);" class="card text-center">
+    <div class="thumbnail">
+        <div class="card-image geopattern" data-pattern-id="ElasticsearchTools">
+            <div class="card-image-cell">
+                <h3 class="card-title">
+                    ElasticsearchTools
+                </h3>
+            </div>
+        </div>
+        <div class="caption">
+            <label for="">Elasticsearch 导出工具</label>
+        </div>
+    </div>
+</a>
+
+<a href="#" target="_blank" onclick="window.open(&quot;https://github.com/ITriangle/WeatherAnalysis&quot;);" class="card text-center">
+    <div class="thumbnail">
+        <div class="card-image geopattern" data-pattern-id="WeatherAnalysis">
+            <div class="card-image-cell">
+                <h3 class="card-title">
+                    WeatherAnalysis
+                </h3>
+            </div>
+        </div>
+        <div class="caption">
+            <label for="">Weather 分析</label>
+        </div>
+    </div>
+</a>
+
+<a href="#" target="_blank" onclick="window.open(&quot;http://www.ictgu.cn&quot;);" class="card text-center">
+    <div class="thumbnail">
+        <div class="card-image geopattern" data-pattern-id="沧海云视频">
+            <div class="card-image-cell">
+                <h3 class="card-title">
+                    沧海云视频
+                </h3>
+            </div>
+        </div>
+        <div class="caption">
+            <label for="">一个有情怀的视频网站</label>
+        </div>
+    </div>
+</a>
+
+{% endif %}
